@@ -5,13 +5,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 public class From {
+	@Test
+	public void openurl(){
+		driver.close();
+	}
+	WebDriver driver = new ChromeDriver();
+	@BeforeTest
+	public void url() {
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		
+		driver.get("https://github.com/unnati098/Class");
+	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		
+		
 		try {
 		Thread.sleep(1000);
 		} catch (InterruptedException e) {
